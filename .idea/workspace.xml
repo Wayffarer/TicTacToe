@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d829707f-54c1-404d-b2e9-a46fa9bb11ac" name="Changes" comment="Division into cells">
+    <list default="true" id="d829707f-54c1-404d-b2e9-a46fa9bb11ac" name="Changes" comment="Creating crosses and tac-toes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe.java" afterDir="false" />
     </list>
@@ -102,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674999366516</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Creating crosses and tac-toes">
+      <created>1675001597256</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675001597256</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,6 +140,7 @@
     <MESSAGE value="The first1" />
     <MESSAGE value="Window" />
     <MESSAGE value="Division into cells" />
-    <option name="LAST_COMMIT_MESSAGE" value="Division into cells" />
+    <MESSAGE value="Creating crosses and tac-toes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating crosses and tac-toes" />
   </component>
 </project>

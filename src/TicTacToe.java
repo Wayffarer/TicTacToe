@@ -23,17 +23,29 @@ public class TicTacToe extends JComponent {
             isXturn = true;
         }
         @Override
-        protected void processMouseEvent(MouseEvent mouseEvent){
+        protected void processMouseEvent(MouseEvent mouseEvent) {
             super.processMouseEvent(mouseEvent);
-            if (mouseEvent.getButton() == mouseEvent.BUTTON1){
+            if (mouseEvent.getButton() == mouseEvent.BUTTON1) {
                 int x = mouseEvent.getX();
                 int y = mouseEvent.getY();
                 int i = (int) ((float) x / getWidth() * 3);
                 int j = (int) ((float) y / getHeight() * 3);
-                if(field[i][j] == FIELD_EMPTY){
-                    field[i][j] = isXturn?FIELD_X:FIELD_O;
+                if (field[i][j] == FIELD_EMPTY) {
+                    field[i][j] = isXturn ? FIELD_X : FIELD_O;
                     isXturn = !isXturn;
                     repaint();
+                    int res = checkState();
+                    if (res != 0) {
+                        if (res == FIELD_O * 3) {
+                            JOptionPane.showMessageDialog(this, "Нолик крос победил!", "Победа", JOptionPane.INFORMATION_MESSAGE);
+                        } else if (res == FIELD_X * 3) {
+                            JOptionPane.showMessageDialog(this, "Крестик крос победил!", "Победа", JOptionPane.INFORMATION_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(this, "Лошки", "Ничья", JOptionPane.INFORMATION_MESSAGE);
+                        }
+                        initGame();
+                        repaint();
+                    }
                 }
             }
         }
@@ -84,5 +96,35 @@ public class TicTacToe extends JComponent {
             graphics.drawLine(0, dh * i, w, dh * i);
             graphics.drawLine(dw * i, 0, dw * i, h);
         }
+    }
+    int checkState(){
+            int diag = 0;
+            int diag2 = 0;
+            for (int i = 0; i < 3; i++){
+                diag += field[i][i];
+                diag2 += field[i][2 - i];
+            }
+            if (diag == FIELD_O * 3 || diag == FIELD_X * 3){return diag;}
+            if (diag2 == FIELD_O * 3 || diag2 == FIELD_X * 3){return diag2;}
+            int check_i,check_j;
+            boolean hasEmpty = false;
+            for (int i = 0; i < 3; i++){
+                check_i = 0;
+                check_j = 0;
+                for (int j = 0; j < 3; j++){
+                    if (field[i][j] == 0){
+                        hasEmpty = true;
+                    }
+                    check_i += field[i][j];
+                    check_j += field[j][i];
+                }
+                if (check_i == FIELD_O * 3 || check_i == FIELD_X * 3){
+                    return check_i;
+                }
+                if (check_j == FIELD_O * 3 || check_j == FIELD_X * 3){
+                    return check_j;
+                }
+            }
+            if (hasEmpty) return 0; else return -1;
     }
 }
