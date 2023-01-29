@@ -6,7 +6,7 @@ public class Main {
         System.out.println("Запускаем игру...");
         JFrame window =new JFrame("TicTacToe");
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        window.setSize(500,500);
+        window.setSize(700,700);
         window.setLayout(new BorderLayout());
         window.setLocationRelativeTo(null);
         window.setVisible(true);
